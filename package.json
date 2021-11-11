@@ -3,6 +3,16 @@
   "main": "./src/main.ts",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "lint": "npx eslint --ext=ts src/",
+    "stylelint": "npx stylelint \"./src/**/*.{scss,css}\"",
+    "jsonlint": "npx jsonlint-cli \"./src/**/*.{json,JSON}\"",
+    "mdlint": "npx markdownlint **/*.{md,MD} -i node_modules -c mdlint.json",
+    "debug:android": "ns debug android",
+    "debug:ios": "ns debug ios",
+    "debug:android:prod": "ns debug android --env.production",
+    "debug:ios:prod": "ns debug ios --env.production"
+  },
   "dependencies": {
     "@angular/animations": "^12.2.0",
     "@angular/common": "^12.2.0",
@@ -20,6 +30,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^12.2.0",
+    "@nativescript/android": "8.1.1",
     "@nativescript/types": "~8.1.1",
     "@nativescript/webpack": "~5.0.0",
     "@ngtools/webpack": "^12.2.0",

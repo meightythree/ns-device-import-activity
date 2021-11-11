@@ -3,6 +3,8 @@ import {
   setActivityCallbacks,
 } from "@nativescript/core";
 
+export const FILE_IMPORT_REQUEST_CODE = 101;
+
 @NativeClass()
 @JavaProxy("org.example.MainActivity")
 export class Activity extends androidx.appcompat.app.AppCompatActivity {

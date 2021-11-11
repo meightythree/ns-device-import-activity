@@ -9,5 +9,7 @@ import { DeviceImportService } from "./device-import.service";
 export class AppComponent {
   constructor(private readonly deviceImportService: DeviceImportService) {}
 
-  onTap(): void {}
+  onTap(): void {
+    this.deviceImportService.openFilePicker();
+  }
 }

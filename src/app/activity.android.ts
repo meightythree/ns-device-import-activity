@@ -2,6 +2,7 @@ import {
   AndroidActivityCallbacks,
   setActivityCallbacks,
 } from "@nativescript/core";
+import { DeviceImportService } from "./device-import.service";
 
 export const FILE_IMPORT_REQUEST_CODE = 101;
 
@@ -78,5 +79,8 @@ export class Activity extends androidx.appcompat.app.AppCompatActivity {
       data,
       super.onActivityResult
     );
+    if (requestCode === FILE_IMPORT_REQUEST_CODE) {
+      DeviceImportService.instance.importFile(resultCode, data);
+    }
   }
 }

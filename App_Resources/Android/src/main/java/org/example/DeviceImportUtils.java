@@ -31,7 +31,7 @@ public class DeviceImportUtils {
         return returnCursor.getString(nameIndex);
     }
 
-    public static boolean copyFileFromIntent(Activity activity, Intent intent, String outputFileName, String outputSubFolder) {
+    public static string copyFileFromIntent(Activity activity, Intent intent, String outputFileName, String outputSubFolder) {
         final File outputFile = new File(outputSubFolder, outputFileName);
         final Uri uri = intent.getData();
         try (
@@ -44,7 +44,7 @@ public class DeviceImportUtils {
                 outputStream.write(buffer, 0, read);
             }
             outputStream.flush();
-            return true;
+            return outputFile.getPath();
         } catch (IOException e) {
             e.printStackTrace();
             return false;
